@@ -1,6 +1,45 @@
 # TPK Skills
 
+![Publish](https://github.com/TungIT98/tpk-skills/workflows/Publish%20to%20ClawHub/badge.svg)
+![Inspect](https://github.com/TungIT98/tpk-skills/workflows/Inspect%20Skills/badge.svg)
+
 Bộ skills cho Claude Code dành riêng cho hệ thống TPK multi-company AI agents.
+
+## ClawHub Installation
+
+```bash
+npx skills add TungIT98/tpk-skills
+```
+
+## GitHub Actions Setup
+
+### Required: CLAWHUB_TOKEN Secret
+
+1. Get your ClawHub token from https://clawhub.ai/settings/tokens
+2. Add secret to GitHub repo:
+   - Go to repo **Settings → Secrets and variables → Actions**
+   - Click **New repository secret**
+   - Name: `CLAWHUB_TOKEN`
+   - Value: your ClawHub token
+
+### Publishing
+
+**Automatic (on tag push):**
+```bash
+# Publish specific skill
+git tag paperclip-sync/v1.0.0
+git push origin paperclip-sync/v1.0.0
+
+# Publish all skills with same version
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+**Manual (workflow_dispatch):**
+1. Go to **Actions** tab
+2. Select **ClawHub Manual Publish**
+3. Click **Run workflow**
+4. Choose skill and version
 
 ## Skills
 
